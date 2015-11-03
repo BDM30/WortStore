@@ -1,0 +1,35 @@
+﻿@model WortStore.Models.Entities.Word
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Add Word</title>
+</head>
+<body>
+<div class="panel panel-success">
+    <div class="panel-heading text-center">
+        <h4>Add Word</h4>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+
+            <div class="form-group">
+                <label>Inscription:</label>
+                @Html.TextBoxFor(x => x.Inscription, new {@class = "form-control"})
+            </div>
+
+            <div class="form-group">
+                <label>Meaning:</label>
+                @Html.TextBoxFor(x => x.Meaning, new {@class = "form-control"})
+            </div>
+            <div class="text-center">
+                <input class="btn btn-success" type="submit" value="Add"/>
+            </div>
+        }
+    </div>
+</div>
+</body>
+</html>
